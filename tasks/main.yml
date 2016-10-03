@@ -1,21 +1,12 @@
-- name: Install curl
-  apt:
-    name: curl
-  tags: install
-
 - name: Download nodejs repository setup script
   get_url:
     url: "https://raw.githubusercontent.com/nodesource/distributions/master/deb/setup_{{ node_version }}"
-    dest: "{{ lookup('env','HOME') }}/nodejs_setup"
+    dest: "/tmp/nodejs_setup"
     mode: 0577
-  tags: install
 
 - name: Run the nodejs setup script
-  command: "{{ lookup('env','HOME') }}/nodejs_setup"
-  tags: install
+  command: "/tmp/nodejs_setup"
 
 - name: Install necessary packages
   apt:
-    name: "{{ item }}"
-  with_items: "{{ system_packages }}"
-  tags: install
+    name: nodejs
