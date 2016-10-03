@@ -1,5 +1,9 @@
-Role Name
+mashape.node
 =========
+[![License][license]][license-url]
+
+[license-url]: http://choosealicense.com/licenses/isc/
+[license]: https://img.shields.io/npm/l/simon-promise.svg?style=flat-square
 
 Installs node from https://github.com/nodesource/distributions/tree/master/deb
 
